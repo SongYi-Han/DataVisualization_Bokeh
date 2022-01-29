@@ -19,7 +19,6 @@ from bokeh.layouts import gridplot
 # ==========================================================================
 
 
-
 ### Task1: Data Preprocessing
 
 
@@ -124,6 +123,6 @@ select.add_tools(hover2)
 
 linked_p = gridplot([p, select], ncols=1)
 show(linked_p)
-output_file("dvc_ex3.html")
+output_file("daily_test.html")
 save(linked_p)
 
