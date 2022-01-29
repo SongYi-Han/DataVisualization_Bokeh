@@ -1,22 +1,17 @@
-import pandas as pd 
+import pandas as pd
 from math import pi
 import numpy as np
 from bokeh.io import output_file, show, save
 from bokeh.plotting import figure
 from bokeh.models import ColumnDataSource, HoverTool,FactorRange
 import bokeh.palettes as bp
- 
+
 # Goal: Draw a line chart displaying averaged daily new cases for all cantons in Switzerland.
-# Dataset: covid19_cases_switzerland_openzh-phase2.csv
-# Interpretation: value on row i, column j is either the cumulative covid-19 case number of canton j on date i or null value
-
-
-
 
 ### Task 1: Data Preprocessing
 
-
-## T1.1 Read data into a dataframe, set column "Date" to be the index 
+## T1.1 Read data into a dataframe, set column "Date" to be the index
+# Interpretation: value on row i, column j is either the cumulative covid-19 case number of canton j on date i or null value
 
 url = 'https://github.com/daenuprobst/covid19-cases-switzerland/blob/master/covid19_cases_switzerland_openzh-phase2.csv'
 url_raw = 'https://raw.githubusercontent.com/daenuprobst/covid19-cases-switzerland/master/covid19_cases_switzerland_openzh-phase2.csv'
@@ -51,7 +46,7 @@ dnc_avg = dnc.rolling(window =3).mean()
 dnc = dnc_avg.fillna(0)
 
 
-## T1.3 Build a ColumnDataSource 
+## T1.3 Build a ColumnDataSource
 
 # Extract all canton names and dates
 # NOTE: be careful with the format of date when it is used as x input for a plot
@@ -69,7 +64,7 @@ source_dict = {}
 source_dict['date'] = date
 for c in cantons:
     source_dict[c] = dnc_avg[c].tolist()
-    
+
 source = ColumnDataSource(data=source_dict)
 
 
@@ -115,19 +110,6 @@ hover = HoverTool(
 p.add_tools(hover)
 
 show(p)
-output_file("dvc_ex2.html")
+output_file("linechart.html")
 save(p)
-
-
-
-
-
-
-
-
-
-
-
-
-
 
