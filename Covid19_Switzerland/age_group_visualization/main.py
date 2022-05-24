@@ -106,7 +106,7 @@ p.add_tools(hover)
 show(p)
 
 
-## T2.3 Save the plot as "dvc_ex1.html" using output_file
+## T2.3 Save the plot as "demo.html" using output_file
 
-output_file("dvc_ex1.html")
+output_file("demo.html")
 

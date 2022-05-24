@@ -42,7 +42,7 @@ from bokeh.models import (CDSView, Circle,
 # Four data sources:
 # Demographics.csv: the statistics data about population density and hospital beds per capita in each canton
 # covid_19_cases_switzerland_standard_format.csv: the location(longitude, latitude) of the capital city in each canton
-# covid19_cases_switzerland_openzh-phase2.csv: same as in ex2, daily new cases in each canton
+# covid19_cases_switzerland_openzh-phase2.csv: daily new cases in each canton
 # gadm36_CHE_1.shp: the shape file contains geometry data of swiss cantons, and is provided in the "data" folder.
 # Please do not submit any data file with your solution, and you can asssume your solution is at the same directory as data
 
